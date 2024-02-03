@@ -1,24 +1,9 @@
 package main
 
-import (
-	"errors"
-	"log"
-)
-
-func SemElse(numeric int64) int64 {
-	if numeric%2 != 0 {
-
-		var err = errorDivide()
-
-		if err != nil {
-			log.Println(err)
-		}
-
+func SemElse(numeric int64) (int64, bool) {
+	if numeric%2 == 0 {
+		return numeric, false
 	}
 
-	return numeric
-}
-
-func errorDivide() error {
-	return errors.New("error")
+	return 0, true
 }

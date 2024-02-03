@@ -6,7 +6,11 @@ import (
 
 func main() {
 	for i := 0; i < 10; i++ {
-		var result = SemElse(int64(i))
-		fmt.Println(result)
+		var result, err = SemElse(int64(i))
+
+		if !err {
+			fmt.Println(result)
+		}
+
 	}
 }
